@@ -2,8 +2,13 @@
 
 ## Instalação das Dependências do Projeto
 
+## git
 Instalar `Git (https://git-scm.com/downloads)`
+
+## npm E Node.js
 Instalar `NPM` e `Node.js (https://www.npmjs.com/get-npm)`
+
+## Angular Cli
 Instalar `Angular Cli (https://cli.angular.io/)`
     `-npm install -g @angular/cli-`
 
