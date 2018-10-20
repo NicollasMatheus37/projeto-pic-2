@@ -2,6 +2,9 @@
 
 ## Instalação das Dependências do Projeto
 
+## VS Code
+Instalar `Visual Studio (https://code.visualstudio.com/download)`
+
 ## git
 Instalar `Git (https://git-scm.com/downloads)`
 
