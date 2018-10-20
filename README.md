@@ -1,6 +1,6 @@
 # TRABSON PIC II
 
-## Instalação das Dependências do Projeto
+# Instalação das Dependências do Projeto
 
 ## VS Code
 Instalar `Visual Studio (https://code.visualstudio.com/download)`
@@ -15,7 +15,7 @@ Instalar `NPM` e `Node.js (https://www.npmjs.com/get-npm)`
 Instalar `Angular Cli (https://cli.angular.io/)`
     `-npm install -g @angular/cli-`
 
-## Clonagem do Projeto
+# Clonagem do Projeto
 
 open cmd/git bash
 
@@ -39,3 +39,7 @@ O `git add` adiciona arquivos desejados que estão no diretório de trabalho ao 
 O `git commit` grava o conteúdo do índice e coloca em no repositório local.
 ## git push
 O `git push` sobe os commits gravados para o repositório remoto.
+
+# Rodando o Projeto
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
