@@ -1,0 +1,24 @@
+<div class="viewport">
+  <div class="title row">
+    <h1 class="left">titulo</h1>
+    <img class="right" src="" alt=""><span>imagem</span>
+  </div>
+  <div class="container">
+    <div class="subtitle">
+      <h2>Indique sua posição no mapa ou digite no campo abaixo:</h2>
+    </div>
+    <div class="input-search row">
+      <input type="text">
+      <i class="fa fa-close">X (close button)</i><!-- fa & fa-close = font awesome -- vou adicionar -->
+    </div>
+    <div class="map">
+      <app-map></app-map>
+    </div>
+    <div class="result">
+      <h2>O melhor caminho pra você é:</h2><br>
+      <p>Passando por: <span *ngFor="let district of districts">{{route.bestRoute}}</span><small class="km">{{route.quilometers}} km</small></p>
+    </div>
+  </div>
+</div>
+
+<!-- class = row -- itens em sequência na mesma linha -->
