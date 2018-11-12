@@ -1,0 +1,25 @@
+/* home component */
+
+.navbar {
+    height: 15vh;
+    width: 100vw;
+    background-color: yellow;
+    box-shadow: 0px 2px 5px black;
+}
+
+.blank-space {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.blank-space-2 {
+    height: 50px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+/* map component */
+
+.map {
+    width: 100vw;
+    height: 100vh;
+}

@@ -1,24 +1,29 @@
-<div class="viewport">
-  <div class="title row">
-    <h1 class="left">titulo</h1>
-    <img class="right" src="" alt=""><span>imagem</span>
+<nav class="navbar">
+  <div class="col-md-12">
+
   </div>
-  <div class="container">
-    <div class="subtitle">
-      <h2>Indique sua posição no mapa ou digite no campo abaixo:</h2>
-    </div>
-    <div class="input-search row">
-      <input type="text">
-      <i class="fa fa-close">X (close button)</i><!-- fa & fa-close = font awesome -- vou adicionar -->
-    </div>
-    <div class="map">
-      <app-map></app-map>
-    </div>
-    <div class="result">
-      <h2>O melhor caminho pra você é:</h2><br>
-      <p>Passando por: <span *ngFor="let district of districts">{{route.bestRoute}}</span><small class="km">{{route.quilometers}} km</small></p>
+</nav>
+
+<div class="container">
+  <div class="col-md-12 blank-space-2"></div>
+  <div class="col-md-12 row">
+    <div class="col-md-2 blank-space"></div>
+    <div class="col-md-8">
+      <div class="form-group">
+        <label for="begin">Digite o local de início</label>
+        <input type="text" name="begin" class="form-control" ([ngModel])="begin">
+      </div>
     </div>
   </div>
 </div>
-
-<!-- class = row -- itens em sequência na mesma linha -->
+<app-map></app-map>
+<div class="container">
+  <div class="col-md-12 blank-space-2"></div>
+  <div class="col-md-12">
+    <div class="col-md-2 blank-space"></div>
+    <div class="col-md-8">
+      <h4>O melhor caminho para você é: {{route.bestRoute}}!</h4>
+      <p>Passando por: <span *ngFor="let district of districts">{{route.districts}}</span><small>{{route.quilometers}}km</small></p>
+    </div>
+  </div>
+</div>

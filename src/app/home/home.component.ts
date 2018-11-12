@@ -10,10 +10,12 @@ export class HomeComponent implements OnInit {
   public route = {
     bestRoute: "",
     quilometers: "",
-    route: Array()
+    districts: Array()
   }
 
   public districts;
+
+  public begin;
 
   constructor() {}
 
