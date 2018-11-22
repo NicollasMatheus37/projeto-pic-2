@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
 import { DijkstraModule } from './dijkstra.module';
+import { DistancesModuleService } from './services/distances-module.service';
+import { DistrictsModuleService } from './services/districts-module.service';
 
 
 @NgModule({
@@ -15,9 +17,12 @@ import { DijkstraModule } from './dijkstra.module';
   ],
   imports: [
     BrowserModule,
-    DijkstraModule
+    DijkstraModule,
   ],
-  providers: [],
+  providers: [
+    DistancesModuleService,
+    DistrictsModuleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

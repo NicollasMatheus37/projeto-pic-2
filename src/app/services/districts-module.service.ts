@@ -110,7 +110,7 @@ export class DistrictsModuleService {
     "Colonial",
     "Coloninha Zili",
     "Comerciário",
-    "Conjunto Habitacional Nova Esperança",
+    "Conjunto H. Nova Esperança",
     "Cristo Redentor",
     "Cruzeiro Do Sul",
     "Dagostin",
@@ -187,8 +187,10 @@ export class DistrictsModuleService {
     "Vila Zuleima",
     "Wosocris"
   ]
-  getDistrict(string, position) {
-    this.districts.indexOf(string, position);
+
+  getDistrict(index) {
+    let start = this.districts[index];
+    
   }
 
 }

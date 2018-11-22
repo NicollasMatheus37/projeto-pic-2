@@ -6,7 +6,7 @@ export class DistancesModuleService {
   protected name = "distances";
 
   /* exemplo de variável a ser adicionada */
-  private distances = [ /* objeto */
+  public distances = [ /* objeto */
     //Ana Maria
     {inicio: 1, destino: 14, distance: 3.7},
     {inicio: 1, destino: 67, distance: 4.0},
