@@ -8,7 +8,7 @@ export class DistancesModuleService {
   /* exemplo de variável a ser adicionada */
   private distances = [ /* objeto */
     //Ana Maria
-    {inicio: 1, destino: 14, distance: 3.7},/* início: bairro 1 - destino: bairro 2 - distance: distancia entre eles */
+    {inicio: 1, destino: 14, distance: 3.7},
     {inicio: 1, destino: 68, distance: 4.0},
     {inicio: 1, destino: 56, distance: 2.8},
     //Argentina
@@ -21,7 +21,7 @@ export class DistancesModuleService {
     //Boa Vista
     {inicio: 4, destino: 28, distance: 0.85},
     //Brasília
-    {inicio: 5, destino: ,53 distance: 1.6},
+    {inicio: 5, destino: 53, distance: 1.6},
     {inicio: 5, destino: 85, distance: 1.9},
     //Catarinense
     {inicio: 6, destino: 86, distance: 1.2},
@@ -86,20 +86,20 @@ export class DistancesModuleService {
     {inicio: 22, destino: 73, distance: 2.8},
     {inicio: 22, destino: 59, distance: 2.4},
     //Jardim Maristela
-    {inicio: 24, destino: 29, distance: 1.0},
-    {inicio: 24, destino: 7, distance: 1.6},
-    {inicio: 24, destino: 1, distance: 1.1},
+    {inicio: 23, destino: 29, distance: 1.0},
+    {inicio: 23, destino: 7, distance: 1.6},
+    {inicio: 23, destino: 1, distance: 1.1},
     //Jardim Paineiras
-    {inicio: 25, destino: 56, distance: 3.1},
-    {inicio: 25, destino: 50, distance: 1.6},
-    {inicio: 25, destino: 55, distance: 2.7},
-    {inicio: 25, destino: 19, distance: 3.5},
-    {inicio: 25, destino: 46, distance: 2.6},
-    {inicio: 25, destino: 42, distance: 3.2},
+    {inicio: 24, destino: 56, distance: 3.1},
+    {inicio: 24, destino: 50, distance: 1.6},
+    {inicio: 24, destino: 55, distance: 2.7},
+    {inicio: 24, destino: 19, distance: 3.5},
+    {inicio: 24, destino: 46, distance: 2.6},
+    {inicio: 24, destino: 42, distance: 3.2},
     //Jardim União
-    {inicio: 26, destino: 52, distance: 1.0},
-    {inicio: 26, destino: 76, distance: 1.1},
-    {inicio: 26, destino: 82, distance: 1.6},
+    {inicio: 25, destino: 52, distance: 1.0},
+    {inicio: 25, destino: 76, distance: 1.1},
+    {inicio: 25, destino: 82, distance: 1.6},
     //Laranjinha
     {inicio: 27, destino: 18, distance: 1.2},
     //Liberdade
@@ -161,7 +161,7 @@ export class DistancesModuleService {
     {inicio: 42, destino: 58, distance: 4.2},
     //Nossa Senhora da Salete
     {inicio: 43, destino: 7, distance: 3.1},
-    {inicio: 43, destino: 24, distance: 2.9},
+    {inicio: 43, destino: 23, distance: 2.9},
     {inicio: 43, destino: 29, distance: 3.7},
     {inicio: 43, destino: 1, distance: 3.2},
     {inicio: 43, destino: 14, distance: 3.6},
@@ -193,7 +193,7 @@ export class DistancesModuleService {
     {inicio: 50, destino: 22, distance: 5.8},
     {inicio: 50, destino: 73, distance: 6.8},
     //Progresso
-    {inicio: 51, destino: 26, distance: 0.17},
+    {inicio: 51, destino: 25, distance: 0.17},
     {inicio: 51, destino: 62, distance: 0.65},
     {inicio: 51, destino: 52, distance: 1.1},
     {inicio: 51, destino: 76, distance: 1.3},
@@ -241,7 +241,7 @@ export class DistancesModuleService {
     {inicio: 61, destino: 32, distance: 1.3},
     {inicio: 61, destino: 60, distance: 2.5},
     //Santa Luzia
-    {inicio: 62, destino: 26, distance: 0.75},
+    {inicio: 62, destino: 25, distance: 0.75},
     {inicio: 62, destino: 52, distance: 0.95},
     {inicio: 62, destino: 82, distance: 1.3},
     //Santo Antônio
@@ -266,7 +266,7 @@ export class DistancesModuleService {
     {inicio: 67, destino: 28, distance: 1},
     //São João
     {inicio: 68, destino: 56, distance: 5.2},
-    {inicio: 68, destino: 25, distance: 2},
+    {inicio: 68, destino: 24, distance: 2},
     //São Luiz
     {inicio: 69, destino: 34, distance: 1},
     {inicio: 69, destino: 64, distance: 1.8},
@@ -275,7 +275,7 @@ export class DistancesModuleService {
     //São Sebastião
     {inicio: 71, destino: 38, distance: 1.6},
     {inicio: 71, destino: 76, distance: 1.6},
-    {inicio: 71, destino: 26, distance: 1.1},
+    {inicio: 71, destino: 25, distance: 1.1},
     {inicio: 71, destino: 51, distance: 1.1},
     //São Simão
     {inicio: 72, destino: 2, distance: 6.2},
