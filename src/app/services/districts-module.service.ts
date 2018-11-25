@@ -189,8 +189,6 @@ export class DistrictsModuleService {
   ]
 
   getDistrict(index) {
-    let start = this.districts[index];
-    
   }
 
 }

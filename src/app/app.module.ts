@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
-import { DijkstraModule } from './dijkstra.module';
 import { DistancesModuleService } from './services/distances-module.service';
 import { DistrictsModuleService } from './services/districts-module.service';
+import { GetDistancesService } from './services/get-distances.service';
+import { DijkstraService } from './services/dijkstra.service';
 
 
 @NgModule({
@@ -16,12 +17,13 @@ import { DistrictsModuleService } from './services/districts-module.service';
     MapComponent
   ],
   imports: [
-    BrowserModule,
-    DijkstraModule,
+    BrowserModule
   ],
   providers: [
     DistancesModuleService,
-    DistrictsModuleService
+    DistrictsModuleService,
+    GetDistancesService,
+    DijkstraService
   ],
   bootstrap: [AppComponent]
 })

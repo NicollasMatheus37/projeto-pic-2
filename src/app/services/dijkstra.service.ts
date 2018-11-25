@@ -1,14 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Injectable } from '@angular/core';
 
-@NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
-})
-export class DijkstraModule { }
-
+@Injectable()
 class NodeVertex {
   nameOfVertex: string;
   weight: number;
@@ -101,3 +93,15 @@ dijkstra.addVertex(new Vertex("E", [{ nameOfVertex: "A", weight: 7 }, { nameOfVe
 dijkstra.addVertex(new Vertex("F", [{ nameOfVertex: "D", weight: 2 }, { nameOfVertex: "G", weight: 3 }], 1));
 dijkstra.addVertex(new Vertex("G", [{ nameOfVertex: "D", weight: 10 }, { nameOfVertex: "E", weight: 5 }, { nameOfVertex: "F", weight: 3 }], 1));
 console.log(dijkstra.findShortestWay("A", "F"));
+
+export class DijkstraService {
+
+  public dijkstra = new Dijkstra();
+
+  constructor() {}
+
+  createVertex(districtName, distancesArray) {
+    dijkstra.addVertex(new Vertex(districtName, distancesArray, 1));
+  }
+
+}

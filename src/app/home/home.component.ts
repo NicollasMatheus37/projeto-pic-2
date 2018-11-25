@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DistrictsModuleService } from '../services/districts-module.service';
 import { DistancesModuleService } from '../services/distances-module.service';
+import { GetDistancesService } from '../services/get-distances.service';
+import { DijkstraService } from '../services/dijkstra.service';
 
 @Component({
   selector: 'app-home',
@@ -27,17 +29,38 @@ export class HomeComponent implements OnInit {
   public begin;
 
   constructor(private districtsModule: DistrictsModuleService,
-    private distancesModule: DistancesModuleService) {
+    private distancesModule: DistancesModuleService,
+    private dijkstra: DijkstraService) {
     this.districts = this.districtsModule.districts;
     this.districtsName = this.districtsModule.districtsName;
     this.distances = distancesModule.distances;
-    console.log(this.distances);
     this.getDistrictsLists();
   }
 
-  getDistance(index) {
-    this.districtsModule.getDistrict(index);
-  }
+  getDistance() {
+    
+    }
+
+    // getDistricts() {
+    //   let districts = [];
+    //   let k = 0;
+    //   for(let i = 0; i < )
+    // }
+
+    // getNumberOfConections(index) {
+    //   this.distances['inicio'];
+    //   let conections = [];
+    //   for(let i = 0; i < this.distances.length; i++) {
+    //     if(this.distances['inicio'] == index) {
+    //       console.log(index);
+    //       conections['distance'].push(this.distances[i]);
+    //       conections['number']++;
+    //     } else {
+    //       break;
+    //     }
+    //   }
+    //   // return console.log(conections)
+    // }
 
   getDistrictsLists() {
     let j = 0;
@@ -64,5 +87,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }
