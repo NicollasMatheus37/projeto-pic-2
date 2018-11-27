@@ -30,37 +30,20 @@ export class HomeComponent implements OnInit {
 
   constructor(private districtsModule: DistrictsModuleService,
     private distancesModule: DistancesModuleService,
+    private getDistancesService: GetDistancesService,
     private dijkstra: DijkstraService) {
     this.districts = this.districtsModule.districts;
     this.districtsName = this.districtsModule.districtsName;
     this.distances = distancesModule.distances;
-    this.getDistrictsLists();
+    getDistancesService.teste();
+    // this.dijkstra.initVertex();
   }
 
-  getDistance() {
-    
-    }
-
-    // getDistricts() {
-    //   let districts = [];
-    //   let k = 0;
-    //   for(let i = 0; i < )
-    // }
-
-    // getNumberOfConections(index) {
-    //   this.distances['inicio'];
-    //   let conections = [];
-    //   for(let i = 0; i < this.distances.length; i++) {
-    //     if(this.distances['inicio'] == index) {
-    //       console.log(index);
-    //       conections['distance'].push(this.distances[i]);
-    //       conections['number']++;
-    //     } else {
-    //       break;
-    //     }
-    //   }
-    //   // return console.log(conections)
-    // }
+  getDistance(index) {
+    // this.dijkstra.findWay(index);
+    // this.dijkstra.findShortestWay(index);
+    this.dijkstra.result();
+  }
 
   getDistrictsLists() {
     let j = 0;

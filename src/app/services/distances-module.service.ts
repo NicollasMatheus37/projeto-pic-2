@@ -162,7 +162,7 @@ export class DistancesModuleService {
     //Vila Floresta II
     [{ destino: 4, distance:1.1 },{ destino: 40, distance:1.6 },{ destino: 87, distance:1.3 },{ destino: 78, distance:1.4 },{ destino: 27, distance:1.6 },{ destino: 31, distance: 2.9},{ destino: 62, distance: 2.9},{ destino: 76, distance: 1.1}],
     //Vila Francesa
-    [{ destino: 79, distance: 1.6},{ destino: 56, distance: 1.3},{ destino: 85, distance: 3.2},{ destino: 88, distance: 2.1},{ destino: 6, distance: 2.8},{ destino: 17, distance: 2.1{ destino: 27, distance: 1.9},{ destino: 40, distance: 1.6},{ destino: 77, distance: 1.4},{ destino: 87, distance: 0.55}],
+    [{ destino: 79, distance: 1.6},{ destino: 56, distance: 1.3},{ destino: 85, distance: 3.2},{ destino: 88, distance: 2.1},{ destino: 6, distance: 2.8},{ destino: 17, distance: 2.1},{ destino: 27, distance: 1.9},{ destino: 40, distance: 1.6},{ destino: 77, distance: 1.4},{ destino: 87, distance: 0.55}],
     //Vila Isabel
     [{ destino: 88, distance: 1.2},{ destino: 56, distance: 0.7},{ destino: 80, distance: 1.5},{ destino: 86, distance: 2.5},{ destino: 78, distance: 1.6},{ destino: 38, distance: 2.9},{ destino: 27, distance: 2.3},{ destino: 17, distance: 1.9},{ destino: 9, distance: 2.3}],
     //Vila Macarini
@@ -180,7 +180,7 @@ export class DistancesModuleService {
     //Vila Visconde
     [{ destino:6 , distance:1.7 },{ destino:10 , distance:1.2 },{ destino:85 , distance:2.1 },{ destino:32 , distance:2.3 },{ destino: 80, distance: 1.3},{ destino: 79, distance: 2.5},{ destino: 9, distance: 3.5}],
     //Vila Zuleima
-    [{ destino: 78, distance:0.54 }{ destino: 77, distance: 1.3}],
+    [{ destino: 78, distance:0.54 },{ destino: 77, distance: 1.3}],
     //Wosocris
     [{ destino: 80, distance: 0.44},{ destino: 6, distance: 1.1},{ destino: 85, distance: 2},{ destino: 79, distance: 1.2},{ destino: 78, distance: 2.1},{ destino: 56, distance: 1.5},{ destino: 9, distance: 2.2}]
   ]
