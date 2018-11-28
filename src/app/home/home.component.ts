@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
 
   public route = {
     bestRoute: "",
-    quilometers: "",
-    districts: Array()
+    quilometers: null
   }
 
   public districts;
@@ -27,16 +26,7 @@ export class HomeComponent implements OnInit {
   public thirdDistricts = [];
   public fourthDistricts = [];
 
-  public graph = [
-    {
-      origin: null,
-      destination: null,
-      distance: null
-    }
-  ];
-  public algorithm;
-
-  public begin;
+  public graph: boolean = false;
 
   constructor(private districtsModule: DistrictsModuleService,
     private distancesModule: DistancesModuleService,
@@ -45,28 +35,9 @@ export class HomeComponent implements OnInit {
     this.districts = this.districtsModule.districts;
     this.districtsName = this.districtsModule.districtsName;
     this.distances = distancesModule.distances;
-    console.log(this.distances)
     this.getDistrictsLists();
     this.createGraph();
   }
-
-  // createGraph() {
-  //   let k = 0;
-  //   let dist = this.distancesModule.distances;
-  //   for(let i = 0; i < dist.length; i++) {
-  //     for(let j = 0; j < dist[i].length; j++) {
-  //       this.graph[k] = {
-  //         origin: this.districtsName[i],
-  //         destination: dist[i][j].destino,
-  //         distance: Math.round(dist[i][j].distance)
-  //       }
-  //       k++;
-  //     }
-  //   }
-  //   console.log(this.graph)
-  //   this.algorithm = new DijkstraTree(this.graph);
-  //   console.log(this.algorithm);
-  // }
 
   createGraph() {
     for(let i = 0; i < this.distances.length; i++) {
@@ -76,18 +47,15 @@ export class HomeComponent implements OnInit {
   }
 
   getDistance(district) {
+    this.graph = true;
     let name = district.name;
-    this.dijkstraService.findShortestWay(name);
-  }
-
-  // getDistance(district) {
-  //   let name = district.name
-  //   let result = this.algorithm.getTree(name);
-  //   this.showResult(result);    
-  // }
-
-  showResult(result) {
-    this.route.quilometers = result['Comerciário'];
+    let response = this.dijkstraService.findShortestWay(name);
+    console.log(response);
+    for(let i = 0; i < (response.length - 1); i++) {
+      if(i > 0) this.route.bestRoute += ', ';
+      this.route.bestRoute += response[i];
+    }
+    this.route.quilometers = response[response.length - 1];
   }
 
   getDistrictsLists() {

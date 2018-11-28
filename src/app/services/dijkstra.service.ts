@@ -37,13 +37,19 @@ class Dijkstra {
         let arrayWithVertex: string[] = [];
         while (nextVertex !== start) {
 
-            let minWeigth: number = Number.MAX_VALUE;
+            let minWeigth: number = 99999999;
             let minVertex: string = "";
             for (let i of this.vertices[nextVertex].nodes) {
-                if (i.weight + this.vertices[i.nameOfVertex].weight < minWeigth) {
-                    minWeigth = this.vertices[i.nameOfVertex].weight;
-                    minVertex = i.nameOfVertex;
+                try {
+                    if (i.weight + this.vertices[i.nameOfVertex].weight < minWeigth) {
+                        minWeigth = this.vertices[i.nameOfVertex].weight;
+                        minVertex = i.nameOfVertex;
+                    }    
+                } catch (e) {
+                    console.log(this.vertices)
+                    console.log(i.nameOfVertex)
                 }
+                
             }
             arrayWithVertex.push(minVertex);
             nextVertex = minVertex;
@@ -65,8 +71,7 @@ class Dijkstra {
                 this.vertices[i].weight = Number.MAX_VALUE;
             }
             nodes[this.vertices[i].name] = this.vertices[i].weight;
-            console.log(this.vertices[i].name)
-            console.log(nodes[this.vertices[i].name])
+            
         }
 
         while (Object.keys(nodes).length !== 0) {
@@ -74,9 +79,14 @@ class Dijkstra {
             let currentVertex: Vertex = this.vertices[sortedVisitedByWeight[0]];
             for (let j of currentVertex.nodes) {
                 const calculateWeight: number = currentVertex.weight + j.weight;
-                if (calculateWeight < this.vertices[j.nameOfVertex].weight) {
-                    this.vertices[j.nameOfVertex].weight = calculateWeight;
+                try {
+                    if (calculateWeight < this.vertices[j.nameOfVertex].weight) {
+                        this.vertices[j.nameOfVertex].weight = calculateWeight;
+                    }
+                } catch(e) {
+                    // console.log(j);
                 }
+                
             }
             delete nodes[sortedVisitedByWeight[0]];
         }
@@ -97,7 +107,13 @@ let dijkstra = new Dijkstra();
 // dijkstra.addVertex(new Vertex("F", [{ nameOfVertex: "D", weight: 2 }, { nameOfVertex: "G", weight: 3 }], 1));
 // dijkstra.addVertex(new Vertex("G", [{ nameOfVertex: "D", weight: 10 }, { nameOfVertex: "E", weight: 5 }, { nameOfVertex: "F", weight: 3 }], 1));
 // console.log(dijkstra.findShortestWay("A", "F"));
-dijkstra.addVertex(new Vertex("Ana Maria",
+
+
+@Injectable()
+export class DijkstraService {
+
+    addVertex(name, graph) {
+        dijkstra.addVertex(new Vertex("Ana Maria",
 [{nameOfVertex: "Cristo Redentor", weight: 3.7},{nameOfVertex: "São João", weight: 4.0},{nameOfVertex: "Renascer", weight: 2.8},{nameOfVertex: "Jardim Maristela", weight: 1.1},{nameOfVertex: "Linha Anta", weight: 1.3},{nameOfVertex: "Operária Nova", weight: 3.2}], 1));
 dijkstra.addVertex(new Vertex("Argentina",
 [{nameOfVertex: "Vila Rica", weight: 2.2},{nameOfVertex: "Brasília", weight: 1.6},{nameOfVertex: "Próspera", weight: 2.9},{nameOfVertex: "Linha Batista", weight: 2.0},{nameOfVertex: "São Simão", weight: 6.2}], 1));
@@ -155,7 +171,7 @@ dijkstra.addVertex(new Vertex("Linha Anta",
 [{ nameOfVertex: "Ceará", weight: 1.8},{ nameOfVertex: "Ana Maria", weight: 1.3},{ nameOfVertex: "Jardim Maristela", weight: 4.2},{nameOfVertex: "Jardim Maristela", weight: 1.0},{nameOfVertex: "Nossa Senhora Da Salete", weight: 3.7}], 1));
 dijkstra.addVertex(new Vertex("Linha Batista",
 [{ nameOfVertex: "Vila Rica", weight: 4.3},{ nameOfVertex: "São Simão", weight: 3.4},{ nameOfVertex: "Argentina", weight: 2.0},{nameOfVertex: "Imigrantes", weight: 2.3}], 1));
-dijkstra.addVertex(new Vertex("Lote Seis ",
+dijkstra.addVertex(new Vertex("Lote Seis",
 [{ nameOfVertex: "Arquimedes Napolini", weight: 2.4},{ nameOfVertex: "Vera Cruz", weight: 1.7},{nameOfVertex: "Centro", weight: 1.6},{nameOfVertex: "Cruzeiro Do Sul", weight: 2.2},{nameOfVertex: "Mina Brasil", weight: 2.1}], 1));
 dijkstra.addVertex(new Vertex("Maria Ceu",
 [{ nameOfVertex: "Monte Castelo", weight: 3.1},{ nameOfVertex: "Vila Floresta II", weight: 2.9},{ nameOfVertex: "Santo Antônio", weight: 2.4},{nameOfVertex: "Coloninha Zili", weight: 2.1},{nameOfVertex: "Mina Do Mato", weight: 2.8},{nameOfVertex: "Operária Nova", weight: 1.2},{nameOfVertex: "Santa Catarina", weight: 1.3},{nameOfVertex: "Vera Cruz", weight: 2.5}], 1));
@@ -179,7 +195,7 @@ dijkstra.addVertex(new Vertex("Monte Castelo",
 [{ nameOfVertex: "Vila Zuleima", weight: 0.74},{ nameOfVertex: "Vila Floresta II", weight: 1.6},{ nameOfVertex: "Estaçãozinha", weight: 2.9},{ nameOfVertex: "Vila Floresta II", weight: 1.6},{ nameOfVertex: "Maria Céu", weight: 3.1},{ nameOfVertex: "Coloninha Zili", weight: 2.1}], 1));
 dijkstra.addVertex(new Vertex("Morro Estevão",
 [{ nameOfVertex: "Dagostin", weight: 2.4},{ nameOfVertex: "Sangão", weight: 4.2},{ nameOfVertex: "Jardim Paineiras", weight: 3.2},{ nameOfVertex: "Pedro Zanivan", weight: 1.9}], 1));
-dijkstra.addVertex(new Vertex("Nossa Senhora da Salete",
+dijkstra.addVertex(new Vertex("Nossa Senhora Da Salete",
 [{ nameOfVertex: "Ceará", weight: 3.1},{ nameOfVertex: "Jardim Maristela", weight: 2.9},{ nameOfVertex: "Linha Anta", weight: 3.7},{ nameOfVertex: "Ana Maria", weight: 3.2},{ nameOfVertex: "Cristo Redentor", weight: 3.6},{ nameOfVertex: "Próspera", weight: 2.6},{ nameOfVertex: "Vila Rica", weight: 3.2}], 1));
 dijkstra.addVertex(new Vertex("Operária Nova",
 [{ nameOfVertex: "Santa Bárbara", weight: 1.3},{ nameOfVertex: "Maria Céu", weight: 1.2},{ nameOfVertex: "Santo Antônio", weight: 1.8},{ nameOfVertex: "Centro", weight: 3.0},{ nameOfVertex: "Santa Catarina", weight: 1.7},{ nameOfVertex: "Michel", weight: 2.4}], 1));
@@ -273,16 +289,10 @@ dijkstra.addVertex(new Vertex("Vila Zuleima",
 [{ nameOfVertex: "Vila Francesa", weight:0.54 },{ nameOfVertex: "Vila Floresta II", weight: 1.3}], 1));
 dijkstra.addVertex(new Vertex("Wosocris",
 [{ nameOfVertex: "Vila Macarini", weight: 0.44},{ nameOfVertex: "Catarinense", weight: 1.1},{ nameOfVertex: "Vila São José", weight: 2},{ nameOfVertex: "Vila Isabel", weight: 1.2},{ nameOfVertex: "Vila Francesa", weight: 2.1},{ nameOfVertex: "Rio Maina", weight: 1.5},{ nameOfVertex: "Cidade Mineira", weight: 2.2}], 1));
-
-
-@Injectable()
-export class DijkstraService {
-
-    addVertex(name, graph) {
-        dijkstra.addVertex(new Vertex(name, graph, 1));
     }
 
     findShortestWay(district) {
-        dijkstra.findShortestWay(district, "Comerciário");
+        return dijkstra.findShortestWay(district, "Comerciário");
+
     }
 }

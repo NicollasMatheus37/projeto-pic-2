@@ -3,17 +3,17 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container text-center" *ngIf="graph">
+    <div class="col-md-12 blank-space-2"></div>
+  <h3>O melhor caminho pra você é seguindo pelos bairros:</h3><br>
+  <h4>{{route.bestRoute}}</h4><br><br>
+  <h4>Com distância de: {{route.quilometers}}km</h4>
+</div>
+
+<div class="container text-center" *ngIf="!graph">
   <div class="col-md-12 blank-space-2"></div>
-  <div class="col-md-12 row">
-    <div class="col-md-2 blank-space"></div>
-    <div class="col-md-8">
-      <div class="form-group">
-        <label for="begin">Digite o local de início</label>
-        <input type="text" name="begin" class="form-control" ([ngModel])="begin">
-      </div>
-    </div>
-  </div><br><br>
+    <h2>Escolha o bairro de início</h2>
+  <br><br>
   <div class="row">
     <div class="col-md-3" style="margin-bottom: 5px;">
       <button class="btn btn-outline-secondary btn-block" (click)="getDistance(district)" *ngFor="let district of firstDistricts"><b>{{district.index+1}}:</b> {{district.name}}</button>
@@ -26,14 +26,6 @@
     </div>
     <div class="col-md-3" style="margin-bottom: 5px;">
       <button class="btn btn-outline-secondary btn-block" (click)="getDistance(district)" *ngFor="let district of fourthDistricts"><b>{{district.index+1}}:</b> {{district.name}}</button>
-    </div>
-  </div>
-  <div class="col-md-12 blank-space-2"></div>
-  <div class="col-md-12">
-    <div class="col-md-2 blank-space"></div>
-    <div class="col-md-8">
-      <h4>O melhor caminho para você é: {{route.bestRoute}}!</h4>
-      <p>Passando por: <span *ngFor="let district of districts">{{route.districts}}</span><small>{{route.quilometers}}km</small></p>
     </div>
   </div>
 </div>
