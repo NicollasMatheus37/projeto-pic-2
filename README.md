@@ -42,4 +42,8 @@ O `git push` sobe os commits gravados para o repositório remoto.
 
 # Rodando o Projeto
 
+##Instalação de Dependências
+`npm install`
+
+## Rodando
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
