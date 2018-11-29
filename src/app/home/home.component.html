@@ -8,6 +8,8 @@
   <h3>O melhor caminho pra você é seguindo pelos bairros:</h3><br>
   <h4>{{route.bestRoute}}</h4><br><br>
   <h4>Com distância de: {{route.quilometers}}km</h4>
+  <br><br><br>
+  <button class="btn btn-secondary" (click)="graph = false">Voltar</button>
 </div>
 
 <div class="container text-center" *ngIf="!graph">
@@ -16,7 +18,7 @@
   <br><br>
   <div class="row">
     <div class="col-md-3" style="margin-bottom: 5px;">
-      <button class="btn btn-outline-secondary btn-block" (click)="getDistance(district)" *ngFor="let district of firstDistricts"><b>{{district.index+1}}:</b> {{district.name}}</button>
+      <button class="btn btn-outline-secondary btn-block" (click)="getDistance(district)" *ngFor="let district of firstDistricts; let i = index" ><b>{{district.index+1}}:</b> {{district.name}}</button>
     </div>
     <div class="col-md-3" style="margin-bottom: 5px;">
       <button class="btn btn-outline-secondary btn-block" (click)="getDistance(district)" *ngFor="let district of secondsDistricts"><b>{{district.index+1}}:</b> {{district.name}}</button>

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DistrictsModuleService } from '../services/districts-module.service';
-import { DistancesModuleService } from '../services/distances-module.service';
-import { GetDistancesService } from '../services/get-distances.service';
 import {DijkstraTree} from "dijkstra-tree";
 import { DijkstraService } from '../services/dijkstra.service';
 
@@ -29,12 +27,9 @@ export class HomeComponent implements OnInit {
   public graph: boolean = false;
 
   constructor(private districtsModule: DistrictsModuleService,
-    private distancesModule: DistancesModuleService,
-    private getDistancesService: GetDistancesService,
     private dijkstraService: DijkstraService) {
     this.districts = this.districtsModule.districts;
     this.districtsName = this.districtsModule.districtsName;
-    this.distances = distancesModule.distances;
     this.getDistrictsLists();
     this.createGraph();
   }
@@ -47,10 +42,12 @@ export class HomeComponent implements OnInit {
   }
 
   getDistance(district) {
+    this.route.bestRoute = '';
+    this.route.quilometers = 0;
     this.graph = true;
     let name = district.name;
     let response = this.dijkstraService.findShortestWay(name);
-    console.log(response);
+    console.log(response)
     for(let i = 0; i < (response.length - 1); i++) {
       if(i > 0) this.route.bestRoute += ', ';
       this.route.bestRoute += response[i];

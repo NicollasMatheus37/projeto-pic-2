@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { DistrictsModuleService } from './districts-module.service';
-import { DistancesModuleService } from './distances-module.service';
 import { DijkstraTree } from "../../../node_modules/dijkstra-tree";
 
 class NodeVertex {
@@ -39,6 +38,7 @@ class Dijkstra {
 
             let minWeigth: number = 99999999;
             let minVertex: string = "";
+            try {
             for (let i of this.vertices[nextVertex].nodes) {
                 try {
                     if (i.weight + this.vertices[i.nameOfVertex].weight < minWeigth) {
@@ -53,9 +53,13 @@ class Dijkstra {
             }
             arrayWithVertex.push(minVertex);
             nextVertex = minVertex;
+        } catch(e) {
+            console.log(this.vertices)
+            console.log(this.vertices[nextVertex])
         }
         return arrayWithVertex;
     }
+}
 
 
     findShortestWay(start: string, finish: string): string[] {
@@ -141,7 +145,7 @@ dijkstra.addVertex(new Vertex("Conjunto Habitacional Nova Esperança",
 [{ nameOfVertex: "Progresso", weight: 1.9},{nameOfVertex: "São Defende", weight: 4.6},{nameOfVertex: "Vila Rica", weight: 0.35}], 1));
 dijkstra.addVertex(new Vertex("Cristo Redentor",
 [{ nameOfVertex: "São João", weight: 5.3},{nameOfVertex: "Ana Maria", weight: 3.7},{nameOfVertex: "Nossa Senhora Da Salete", weight: 3.6}], 1));
-dijkstra.addVertex(new Vertex("Cruzeiro do Sul",
+dijkstra.addVertex(new Vertex("Cruzeiro Do Sul",
 [{ nameOfVertex: "Mina Brasil", weight:1.8 },{ nameOfVertex: "Lote Seis", weight: 2.2},{ nameOfVertex: "Vera Cruz", weight: 2.4},{ nameOfVertex: "Centro", weight: 1.7},{nameOfVertex: "Pio Corrêa", weight: 1.6},{nameOfVertex: "Próspera", weight: 3.0}], 1));
 dijkstra.addVertex(new Vertex("Dagostin",
 [{ nameOfVertex: "Quarta Linha", weight: 3.1},{ nameOfVertex: "Verdinho", weight: 9.4},{nameOfVertex: "Morro Estêvão", weight: 2.4}], 1));
@@ -181,9 +185,9 @@ dijkstra.addVertex(new Vertex("Michel",
 [{ nameOfVertex: "Santos Dumont", weight: 2.1},{ nameOfVertex: "Santa Bárbara", weight: 1.3},{ nameOfVertex: "Operária Nova", weight: 2.4},{ nameOfVertex: "Centro", weight: 2.3},{ nameOfVertex: "Pio Corrêa", weight: 2.7},{nameOfVertex: "Ceará", weight: 3.7},{nameOfVertex: "Comerciário", weight: 1.2},{nameOfVertex: "São Luiz", weight: 1.0}], 1));
 dijkstra.addVertex(new Vertex("Milanese",
 [{ nameOfVertex: "Pinheirinho", weight: 2.8},{ nameOfVertex: "Jardim Angélica", weight: 4.0},{nameOfVertex: "Fábio Silva", weight: 1.5},{nameOfVertex: "Recanto Verde", weight: 1.9},{nameOfVertex: "Santos Dumont", weight: 0.28},{nameOfVertex: "São Luiz", weight: 1.4}], 1));
-dijkstra.addVertex(new Vertex("Mina do Brasil",
+dijkstra.addVertex(new Vertex("Mina Brasil",
 [{ nameOfVertex: "Pinheirinho", weight: 3.7},{ nameOfVertex: "Lote Seis", weight: 2.1},{nameOfVertex: "Cruzeiro Do Sul", weight: 1.8},{nameOfVertex: "Próspera", weight: 4.2},{nameOfVertex: "São Simão", weight: 6.6}], 1));
-dijkstra.addVertex(new Vertex("Mina do Mato",
+dijkstra.addVertex(new Vertex("Mina Do Mato",
 [{ nameOfVertex: "Coloninha Zili", weight: 1.9},{ nameOfVertex: "Laranjinha", weight: 5.3},{ nameOfVertex: "Maria Céu", weight: 2.8},{ nameOfVertex: "São Sebastião", weight: 5.9}], 1));
 dijkstra.addVertex(new Vertex("Mina União",
 [{ nameOfVertex: "Distrito Industrial", weight: 1.6},{ nameOfVertex: "Cidade Mineira", weight: 1.6},{ nameOfVertex: "Mineira Nova", weight: 1.3},{ nameOfVertex: "São Defende", weight: 5.6},{nameOfVertex: "São Sebastião", weight: 1.6},{nameOfVertex: "Vila Belmiro", weight: 0.9}], 1));
@@ -293,6 +297,5 @@ dijkstra.addVertex(new Vertex("Wosocris",
 
     findShortestWay(district) {
         return dijkstra.findShortestWay(district, "Comerciário");
-
     }
 }
