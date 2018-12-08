@@ -116,7 +116,7 @@ let dijkstra = new Dijkstra();
 @Injectable()
 export class DijkstraService {
 
-    addVertex(name, graph) {
+    addVertex() {
         dijkstra.addVertex(new Vertex("Ana Maria",
 [{nameOfVertex: "Cristo Redentor", weight: 3.7},{nameOfVertex: "São João", weight: 4.0},{nameOfVertex: "Renascer", weight: 2.8},{nameOfVertex: "Jardim Maristela", weight: 1.1},{nameOfVertex: "Linha Anta", weight: 1.3},{nameOfVertex: "Operária Nova", weight: 3.2}], 1));
 dijkstra.addVertex(new Vertex("Argentina",

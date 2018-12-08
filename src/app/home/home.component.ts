@@ -35,19 +35,15 @@ export class HomeComponent implements OnInit {
   }
 
   createGraph() {
-    for(let i = 0; i < this.distances.length; i++) {
-      let nameOfVertex = this.districtsName[i];
-      this.dijkstraService.addVertex(nameOfVertex, this.distances[i]);
-    }
+    this.dijkstraService.addVertex()
   }
 
   getDistance(district) {
-    this.route.bestRoute = '';
+    this.route.bestRoute = district.name;
     this.route.quilometers = 0;
     this.graph = true;
     let name = district.name;
     let response = this.dijkstraService.findShortestWay(name);
-    console.log(response)
     for(let i = 0; i < (response.length - 1); i++) {
       if(i > 0) this.route.bestRoute += ', ';
       this.route.bestRoute += response[i];
