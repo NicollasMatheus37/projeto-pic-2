@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   getDistance(district) {
-    this.route.bestRoute = district.name;
+    this.route.bestRoute = district.name + ", ";
     this.route.quilometers = 0;
     this.graph = true;
     let name = district.name;
